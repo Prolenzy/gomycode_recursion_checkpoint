@@ -1,0 +1,18 @@
+FUNCTION is_palindrome(word : STRING) : BOOLEAN
+VAR
+    start := 0
+    end := length - 1
+    length := length of word
+BEGIN
+    WHILE start < end DO // Loop to compare characters from both ends towards the center 
+    // The instance below checks if characters at start and end positions are equal 
+        IF character at position start in word is NOT equal to character at position end in word THEN
+        RETURN false; // If characters are different, it is not a palindrome 
+        END_IF
+
+        increment start // Move counts towards the center 
+        decrement end // Move counts towards the center 
+    END-WHILE
+
+    RETURN true ; // If the loop complete without returning false, the word is a palindrome 
+END
